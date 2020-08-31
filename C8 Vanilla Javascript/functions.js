@@ -68,4 +68,5 @@ function generateWinningLotteryNumbers(numberOfResults){
 }
 generateWinningLotteryNumbers(1);
 
-var n = new Date().getHour()
+var n = new Date().getHour();
+console.log(n);
