@@ -20,7 +20,7 @@ console.log(numbers[10]);
 
 //orice pozitie folosim si nu e in lista obtinem undefined.
 
-numbers.forEach(function(number){
+numbers.forEach( function(number){
     console.log(number);
 })
 //pentru fiecare element din numbers vom vrea sa executam aceasta functie - function va primi un parametru number si inauntru console.log punem numbers.
@@ -120,7 +120,7 @@ function generateWinningLotteryNumbers(numberOfResults, results){
     }
     var number = Math.floor(Math.random()* 49) + 1; // poate genera si 0, deci se face +1
 
-    var isNumberInResults = false; // scopul variabilei este sa tinem minte daca nr generat exista deja in lista sau nu; este fals pentru ca daca e nu este nici un duplicat avem nr nou si se adauga in lista de rezultate;
+    var isNumberInResults = false; // scopul variabilei este sa tinem minte daca nr generat exista deja in lista sau nu; este fals pentru ca daca nu este nici un duplicat avem nr nou si se adauga in lista de rezultate;
 
     for (var index = 0; index < results.lenght; index++) {
         if (results[index] === number ){

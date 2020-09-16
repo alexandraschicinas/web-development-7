@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reacting time! </title>
+    </head>
+    <body>
+        <p id= "date">Click the button to display the date.</p>
+    <button id="my button"> The time is?</button>
+<!-- onclick="displayDate()" -->
+        <script>
+            function displayDate(){
+                document.getElementById("date").innerHTML = new Date().toLocaleDateString();
+            }
+            document.getElementById("my button").onclick = displayDate;
+            // daca am pune paranteze functia se executa imediat, nu asteapta sa se apese pe buton, e data mai departe pana in momentul in care utilizatorul apasa pe buton;
+            // event listenerul este mai puternic decat ambele variante;
+            document
+            .getElementById("my button")
+            .addEventListener("click", () => console.log("I'm another one"));
+        </script>
+    </body>
+</html>

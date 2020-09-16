@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Finding in DOM</title>
+        <style>
+            .flex-container {
+                display: flex;
+                width: 90vw;
+                justify-content: center;
+
+            }
+            .flex-items {
+                width: 100px;
+                height: 100px;
+                background-color: teal;
+                margin: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="My button">Click me!</button>
+        <a href = "google.com">Google</a>
+        <a href = "facebook.com">Facebook</a>
+        <div class = "flex-container"> <!--this is a parent for flex-items-->
+        <div class = "flex-items">1</div>
+        <div class = "flex-items">2</div>
+        <div class = "flex-items">3</div>
+        <!--flex-items are the children of flex-container-->
+        </div>
+
+        <script>
+            const button = document.getElementById("My button");
+            console.log(button);
+            button.innerText = "Now don't click me!"
+
+            const anchors = document.getElementsByTagName("a");
+            console.log(anchors);
+
+            anchors[1].href = "https://www.zoomania.ro";
+
+            const flexItems = document.getElementsByClassName("flex-items");
+            console.log(flexItems);
+
+            for (let index= 0; index < flexItems.length; index++) {
+            flexItems[index].style.backgroundColor = "red";
+            //////////[pozitia]
+            }
+            // for-metoda prin care putem merge element cu elemenent din lista, pana cand conditia din () nu mai este indeplinita;
+            // index++ este un incrementator, din cat in cat
+            const flexContainer = document.getElementsByClassName("flex-container");
+            console.log(flexContainer[0])
+            // flexContainer[0].innerHTML = "here we have a simple text"
+            // cu innerHTML putem schimba orice
+            // not recomanded
+
+            const newFlexItem = document.createElement("h1");// here we created h1 tag element
+            newFlexItem.innerText = "New h1"; // here we added some text to it.
+            flexContainer[0].appendChild(newFlexItem); // []e o lista containerul si cu metoda append.Child declaram pe cine;
+            //astfel declaram locul unde sa il punem noul element creat.
+
+            flexContainer[0].removeChild(flexItems[0]);
+
+
+
+
+        </script>
+    </body>
+</html>

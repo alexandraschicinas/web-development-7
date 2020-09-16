@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Car driving</title>
+        <style>
+            body {
+                display: flex;
+                height: 100vh;
+                justify-content: center; /* in centru pe latine*/
+                align-items: center; /* in centru pe inaltime*/
+            }
+            #car {
+                position: relative; /* ne lasa sa folosim top and left*/
+                width:100px;
+                height: 150px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img id="car"
+        src = "red-car.png"
+        alt = "car" />
+
+        <script>
+            //selectam masina
+            const carElement = document.getElementById("car");
+            // console.log(carElement); te verifici daca faci ce trebuie - este selectata masina?
+            let l = 0;
+            let t = 0; // pozitia initiala;
+
+            document.addEventListener("keydown", (event) =>{ //contains events about what happend 
+                if (event.code ==="ArrowLeft") {
+                    l = l - 10;
+            
+                } else if (event.code ==="ArrowRight"){
+                    l = l + 10;
+                } else if (event.code ==="ArrowUp"){
+                    t = t - 10;
+                } else if ( event.code === "ArrowDown"){
+                    t = t + 10;
+                }
+                carElement.style.left = l + "px"; // schimbare left px;
+                carElement.style.top = t + "px";
+            } ) 
+            //adaugam un eveniment pe pagina pt ca nu trebuie sa facem clic pe ceva ci doar pe butoane stg drp;
+            // ce se intampla cand cineva apasa keydown=orice tasta apasata, urmat de o functie- arrow function
+            // evenimentul de code este agaugat automat pe tasta keydown;
+        </script>
+    </body>
+</html>

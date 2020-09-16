@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Email validator
+        </title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            #email {
+                outline: none;
+                border : 2px solid red;
+                padding: 8px 12px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="email" id="email" placeholder="Your email ..."/>
+
+        <script>
+            //let counter = 0; // se face la inceput pt a numara de cate ori este apasat un buton.
+            const emailInput = document.getElementById("email");
+            emailInput.addEventListener("keypress", (event) => {
+                const email = emailInput.value + event.key; // luam atributul de valoare
+                if (email.includes("@") && email.includes(".com")){
+                    emailInput.style.borderColor = "green";
+                } else {
+                    emailInput.style.borderColor = "purple";
+
+                }
+               // counter = counter + 1;// contor
+                             
+            })
+        </script>
+    </body>
+</html>
