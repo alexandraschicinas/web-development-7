@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Location(URL) manipulation</title>
+    </head>
+    <body>
+        <p>Location manipulation</p>
+        <button onclick = "refresh()">Refresh page!</button>
+        <script>
+            // se poate interactiona cu URL paginii
+            // afisare url cu js
+            const href = window.location.href;
+            console.log("Href/WholeURL:", href);
+            // cu href se vede tot ce avem in bara de url
+           // window.location.href = "https://www.google.com"
+           //hostname folosind location, pe ce domeniu este site-ul;
+           console.log("Hostname:", location.hostname);
+
+           console.log("Pathname:", location.pathname);
+           //pathname este ceea ce apare dupa domeniu, dupa primul slash
+           // navigare fara sa inlocuim url
+           //location.assign("https://google.com");
+           //refresh pagina
+           
+           const refresh= () => {
+               location.reload();
+           };
+
+           //functie istorizare:
+           
+        </script>
+    </body>
+</html>

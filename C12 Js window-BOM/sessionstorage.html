@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sesion Storage</title>
+    </head>
+    <body>
+        <script>
+            sessionStorage.setItem("myTemporaryStaffs", "this is temporary");
+            console.log(sessionStorage.getItem("myTemporaryStaffs"));
+            //sessionStorage.removeItem("myTemporaryStaffs");
+            // cand se inchide browserul se pierde info din session storage
+            // se foloseste la info mai personale, de care e nevoie cand se foloseste browserul dar la inchidere se pierd.
+        </script>
+    </body>
+</html>

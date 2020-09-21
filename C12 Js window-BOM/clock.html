@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clock (JS Timing events)</title>
+    </head>
+    <body>
+        <h1 id="clock"></h1>
+        <button onclick = "stopWatch()">Stop Time!</button>
+        <script>
+            // browserul ne permite sa rulam un cod la un interval de timp, sau rulare un cod la anumite intervale...
+            const timeFunction= ()=>{
+                const clockElement = document.getElementById("clock");
+                const currentDate = new Date();
+                const currentTime = currentDate.toLocaleTimeString();
+                clockElement.innerText = currentTime;
+            }
+            const timeInterval = setInterval(timeFunction, 1000);
+            // nu se pun paranteze pt ca nu vrem sa executam functia, ci doar sa o dam ca paramentru;
+            // here timeFunction is passed as a reference, timeFunction used like this is also called as callback - functii care se executa mai tarziu
+            // timpul se masoara in milisecunde!!
+            const stopWatch = () => {
+                clearInterval(timeInterval);
+            }
+            //setInterval si clearInterval sunt functii prestabilite
+
+            setTimeout(() =>{
+                alert("Time Passed!")
+            }, 3000);
+        </script>
+    </body>
+</html>

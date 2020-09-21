@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Navigator Object</title>
+    </head>
+    <body>
+        <p>Navigator</p>
+        <script>
+            console.log(navigator.userAgent);
+            // userAgent ne ajuta sa ne conectam la un browser - 
+            console.log(navigator.language);
+            console.log(navigator.languages);
+            navigator.geolocation.getCurrentPosition((coordinates) => {
+                console.log(coordinates)
+            });
+            // nav - info depre dispozitiv, limbi, browser => pt o experienta buna trebuie tinut cont de ele
+        </script>
+    </body>
+</html>

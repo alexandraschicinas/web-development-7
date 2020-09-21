@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Local Storage</title>
+    </head>
+    <body>
+        <p id="localStorage"></p>
+        <input type= "text" placeholder="password" id="password"/>
+        <script>
+
+            class Tiny {
+                constructor(name){
+                    this.name = name;
+                }
+            }
+            const item = new Tiny("bob");
+            console.log(item);
+
+            //local storage arata doar stringuri, astfel trebuie sa trans obj in string
+            localStorage.setItem("item1", JSON.stringify(item));
+            const itemFromLocalStorage = JSON.parse(localStorage.getItem("item1"));
+            console.log(itemFromLocalStorage.name);
+
+            // with this we save infos in local storage
+            // local storage never expires
+
+            localStorage.setItem(`username`,"achici");
+            //with this we get infos from local storage;
+            const username = localStorage.getItem("username");
+            document.getElementById("localStorage").innerText= username;
+
+            const passwordInput = document.getElementById("password");
+            passwordInput.addEventListener("input", (event) =>{
+                console.log(event.target.value);
+                localStorage.setItem("password", event.target.value);
+
+            });
+            passwordInput.value = localStorage.getItem("password");
+            // with this we remove infos from local storage
+            localStorage.removeItem("username");
+            // e indicat sa salvam informatii in local storage pt ca se poate accesa restrictionat.
+
+            
+        
+        </script>
+    </body>
+</html>

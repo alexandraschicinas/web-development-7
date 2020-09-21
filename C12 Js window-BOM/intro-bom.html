@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interacting with the BOM! (window object)</title>
+    </head>
+    <body>
+        <p>Window time!</p>
+        <p id="win"></p>
+        <script>
+            window.document.getElementById("win").innerText = `Screen width: ${window.innerHeight}`;
+            alert("Hello there");
+            window.alert("Another one!");
+            // ! dom-ul - interactiune lucruri de pe pagina,standarde pe fiecare browser
+            // ! bom- interactiune cu window-ul, browser : url/ history, cookies
+            // dom-incepe de la tag html
+            // bom -este punctul de origine, nu incepe de nicaieri
+        </script>
+    </body>
+</html>
