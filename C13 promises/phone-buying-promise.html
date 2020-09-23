@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            I promise you will understand
+        </title>
+    </head>
+    <body>
+        <h1>Waiting for phone....</h1>
+        <script>
+            let isMumHappy = true;
+            // we create a promise
+            const willIGetNewPhone = new Promise((resolve,reject)=> {
+                if (isMumHappy) { //this is identical isMumHappy == true
+                    const phone = {
+                        brand: "Nokia",
+                        name: "3310",
+                        color: "black"
+                    };
+                    resolve(phone); //here the primise is fulfilled;
+                } else {
+                    const reason = new Error("mum is not happy.")
+                    reject(reason); //rejeacted
+                };
+            });
+            const showOff = (phone) => {
+                return new Promise((resolve) => {
+                    const message = `Hey friend, I have a new ${phone.color} ${phone.brand} ${name}.`
+                    resolve(message);
+                });
+            };
+            // new Promise(function(resolve, reject){...}) -pendiiiing - promisiunea nu a fost consumata- consumat un cuvant des intal=folosita
+            //we consume a promise
+            const askMum = () => {
+                console.log("before asking mum")
+                return willIGetNewPhone
+                    .then(showOff) //daca da .then
+                    .then((fulfilled)=>{
+                    //.then ne forteaza codul sa astepte pana cand promisul a fost rezolvat sau rejected.
+                    console.log(fulfilled);
+                    //here output a new phone
+                })
+                    .catch((error) => { //daca nu .catch eroare sau reject
+                    //ups mum didn't buy it
+                    console.log(error.message);
+                });
+                //error handling for promises
+                //codul din then nu este executat imediat ci mai tarziu, nu astepta dupa anumite linii de cod sa se termine
+            };
+            askMum(); //chemam functia 
+            console.log ("after asking mum")
+            //syncronise asyncronise
+            // promises sunt asycron
+            //codul scris sincron se executa linie cu linie;
+            //codul asyncron e cod care se poate executa mai tarziu;
+            
+            // 1.Before asking mum.
+            //2. After asking mum.
+            //3. Hey friend, I have a new ....
+
+            //rescriere promise pt un cod mai usor de citit ES 7 async await
+            
+        </script>
+    </body>
+</html>
