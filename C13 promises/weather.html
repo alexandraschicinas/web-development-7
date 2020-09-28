@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Weather in Cluj-Napoca
+        </title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+                height: 100vh;
+                margin: 0; 
+                padding: 0;
+                /* daca apare margine portocalie in inspect se seteaza margin 0/padding */
+            }
+            div {
+                display: flex;
+                width: 400px;
+                align-items: center;
+                border: 1px solid grey;
+                box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+            }
+            .temperature {
+                margin-left: auto;
+            }
+            .temperature p {
+                text-align: right;
+                margin-left: 5px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <img id = "icon" src = "./loader.gif "/>
+            <section>
+                <h1>Loading...</h1>
+                <p>Description</p>
+            </section>
+            <section class = temperature>
+                <p>Current temp:<span> Current_temp</span></p>
+                <p> Min temp:<span>Min_temp</span></p>
+                <p> Max temp:<span>Max_temp</span></p>
+            </section>
+        </div>
+        <script>
+            (async () => {
+                const response = await fetch( //aici incepe promisiunea
+            "https://api.openweathermap.org/data/2.5/weather?q=cluj&appid=066d514e5f0527f8fac6ad2bdb4525e8&units=metric");
+            console.log(response);
+            if (response.ok === true) {
+                  const weatherData = await response.json(); //returneaza o promisiune ....si afiseaza urmatoarele de indata ce gaseste informatiile in api
+                  console.log(weatherData);
+                  const iconUrl = `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
+                  document.getElementById("icon").src = iconUrl;
+                  document.getElementsByTagName("h1")[0].innerText = weatherData.weather[0].main;
+                  document.getElementsByTagName("p")[0].innerText = weatherData.weather[0].description;
+                  document.getElementsByTagName("p")[1]
+                            .getElementsByTagName("span")[0].innerText = weatherData.main.temp;
+                  document.getElementsByTagName("p")[2]
+                            .getElementsByTagName("span")[0].innerText = weatherData.main.temp_min;
+                  document.getElementsByTagName("p")[3]
+                            .getElementsByTagName("span")[0].innerText = weatherData.main.temp_max;
+            }
+      
+            })();
+            //fetch = http call catre un server, metoda de comunicare intre servere si clienti dupa un anumit standard - http call de get;
+        </script>
+    </body>
+</html>

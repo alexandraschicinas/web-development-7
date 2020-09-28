@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            I promise you will understand
+        </title>
+    </head>
+    <body>
+        <h1>Waiting for phone....</h1>
+        <script>
+             let isMumHappy = false;
+            // we create a promise
+            const willIGetNewPhone = new Promise((resolve,reject)=> {
+                if (isMumHappy) { //this is identical isMumHappy == true
+                    const phone = {
+                        brand: "Nokia",
+                        name: "3310",
+                        color: "black"
+                    };
+                    resolve(phone); //here the primise is fulfilled;
+                } else {
+                    const reason = new Error("mum is not happy.")
+                    reject(reason); //rejeacted
+                };
+            });
+            const showOff = (phone) => {
+                return new Promise((resolve) => {
+                    const message = `Hey friend, I have a new ${phone.color} ${phone.brand} ${name}.`
+                    resolve(message);
+                });
+            };
+            //es7 2 cuv cheie async si await 
+            async function askMum() { //const askMum async() => { }
+                try{ console.log("before asking mum");
+                    const phone = await willIGetNewPhone; //opreste-te pana cand primim rezultatul, tel
+                    const message = await showOff(phone); //stop pana cand ne putem lauda prietenilor
+                    console.log(message);
+                    console.log("after asking mum");
+                    } catch (error) { // promisiunea crapa => se foloseste catch pt a intra mesajul de eroare.
+                        console.log(error.message);
+                    }
+                }
+                //apelatul unei functii asincrone este mai complexa
+                   
+                (async () => {
+                    await askMum();
+                })(); 
+                // asa se cheama o functie asyncrona
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Adding React</title>
+        <!-- this adds React functionalities -->
+        <script src = "https://unpkg.com/react@16/umd/react.development.js"></script>
+        <!-- this contains the functionalities to add React to the DOM -->
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <!--Allows react components to be written in a friendlier way-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <!-- asa adaugam React la pagina noastra - doar adaugat!!! -->
+
+    </head>
+    <body>
+        <div id = "here-starts-react"></div>
+        <script type = "text/babel"> 
+        ReactDOM.render( 
+            <h1>Hello from React! </h1>, document.getElementById("here-starts-react")
+        );
+        
+        </script>
+    </body>
+</html>

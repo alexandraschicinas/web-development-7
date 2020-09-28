@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interacting with DOM</title>
+        <script>
+            // run this function when the document is loaded
+            window.onload = function() {
+                //create a couple of elements in an otherwise empty HTML page;
+                const heading = document.createElement("h1");
+                const heading_text= document.createTextNode("big head");
+                heading.appendChild(heading_text);
+                document.body.append(heading);
+            
+
+           let newElement = document.createElement("h2")
+           newElement.innerHTML = "new element";
+           heading.appendChild(newElement);
+           document.heading.append(newElement);
+            }
+        </script>
+    </head>
+    <body ></body>
+
+    </body>
+</html>
