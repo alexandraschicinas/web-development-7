@@ -5,7 +5,8 @@ const BirthdayCard = (props) => {
     // props e read-only- nu poate fi modificata!!
     // React ne ajuta sa creeam UI = componente de lego previzibile
     // props date in interior sunt read-only nu pot fi programate
-    // e functie pura = fara side effects - tot timpul ne arata acelasi lucru
+    // e functie pura = fara side effects - tot timpul ne arata acelasi lucru/ functioneaza la fel daca avem aceleasi props.
+    // trebuie sa stim un sa spargem un proiect in componente - componentele alcatuiesc proiectul;
     return ( <div style = {{
         width: "200px",
         height: "200px",
