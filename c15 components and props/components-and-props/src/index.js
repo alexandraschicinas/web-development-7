@@ -5,13 +5,13 @@ import App from './App'
 // import BirthdayCard from './BirthdayCard';
 import * as serviceWorker from './serviceWorker';
 
-// o componenta este o functie care returneaza cod jsx -conceptual- accepta un songur parametru numit props! tot timpul este numit props!!
-// component functionala!!!
+// o componenta este o functie care returneaza cod jsx -conceptual- accepta un singur parametru numit props! tot timpul este numit props!!
+// componenta functionala!!!
 // function Welcome(props) {
 // return <h1>Hello, {props.name}</h1>;
 // }
 
-// const Welcome = (props) => <h1>Hello, {props.name}</h1>
+const Welcome = (props) => <h1>Hello, {props.name}</h1>
 // numele functiilor trebuie scrise cu litera mare obligatoriu, altfel le confunda cu tag-urile de html;
 
 //componente de tip clasa
@@ -28,8 +28,8 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Welcome name = "Alexandra" /> 
-     asa se cheama/foloseste o functie/componenta in react */}
+     <Welcome name = "Alexandra" /> 
+     {/*asa se cheama/foloseste o functie/componenta in react */}
     {/* <Welcome name = "Alex" /> 
     <Welcome name = "Ana" />   */}
     {/* <Clock timezone = "America/Los_Angeles"/>

@@ -22,17 +22,17 @@ import "./index.css";
 //   )
 //   ReactDOM.render(element, document.getElementById("root"));
 // }
-// setInterval(tick,1000);
+// setInterval(tick,1000)
 
 // const string = "something ${2+2}"
 // ReactDOM.render(
-  // <React.StrictMode>
+//   <React.StrictMode>
 
-  //   <h1> 
-  //     {/*user.firstName} {user.lastName*/}
-  //       {/* {formatName(user)} */}
-  //       {now.toLocaleTimeString}
-  //   </h1> 
+    //  <h1> 
+    /* //   {user.firstName} {user.lastName} */
+       /* {formatName(user)*/
+      //  {now.toLocaleTimeString} 
+    // </h1> ,
     
 
   //   {/* sintaxa jsx */}
@@ -49,7 +49,7 @@ import "./index.css";
 //   document.getElementById("root")
 // )
 
-const element = <h1 className = "container"> Hello! </h1>
+const element = <h1 className = "container"> Hello guys! </h1>
 // babel scrie 
 // const element = React.createElement(
 //   "h1", {
