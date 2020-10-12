@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import "./index.css";
 
-// const  user = {
-//   firstName : "Alexandra",
-//   lastName : "Chicinas"
-// }
+const  user = {
+  firstName : "Alexandra",
+  lastName : "Chicinas"
+}
 
 // const formatName = (user) => {
 //   return user.firstName + " " + user.lastName;
@@ -25,17 +25,17 @@ import "./index.css";
 // setInterval(tick,1000)
 
 // const string = "something ${2+2}"
-// ReactDOM.render(
-//   <React.StrictMode>
+ReactDOM.render(
+  <React.StrictMode>
 
-    //  <h1> 
-    /* //   {user.firstName} {user.lastName} */
-       /* {formatName(user)*/
-      //  {now.toLocaleTimeString} 
+    <h1> 
+      {user.firstName} {user.lastName}
+      {formatName(user)}
+      {/* //  {now.toLocaleTimeString} 
     // </h1> ,
-    
+     */}
 
-  //   {/* sintaxa jsx */}
+  //   {/* sintaxa jsx */},
   // </React.StrictMode>,
 //   document.getElementById('root')
 // );
