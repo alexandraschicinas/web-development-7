@@ -17,7 +17,7 @@ import React from 'react';
     return (
         <ul>
             {toDos.map((todo) => (
-                <li key={todo.id}>{todo.name}</li>
+                <li key={todo.id}>{todo.text}</li>
                 // daca e toString fara paranteze nu e functie si se paseaza prin referinte keya, e aceeasi cheie;
                 // cand e cu paranteze vrem rezultatul acelei functii => e diferit de fiecare data;
                 ))}
